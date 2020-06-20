@@ -8,8 +8,9 @@ using System.Xml;
 
 namespace StudentClass
 {
-    class Student
+    public class Student : StudentClass
     {
+        string test;
         //Constructors x2
         //Constructor with two required fields. 
         public Student(string Name, double studentID)
@@ -43,7 +44,6 @@ namespace StudentClass
             p_PrivacyChoice = choice;
             //log.Add(new Logs() { changes = "User has been created with StudentID: " + p_StudentID });
         }
-
         //Public getters and setters
         public string Name
         {
@@ -52,7 +52,7 @@ namespace StudentClass
             {
                 p_Name = value;
                 //log changes
-               // log.Add(new Logs() {changes="Name has been changed for user to Name " + p_Name});
+                test += "\n" + Name + ": Name has been changed";
             }
         }
         public double StudentID
@@ -61,66 +61,129 @@ namespace StudentClass
         }
         public string Major
         {
-            get { return this.p_Major; }
+            get {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_Major;
+                }
+                else return "Private";
+            }
             set
             {
                 this.p_Major = value;
+                test += "\n" + Name + ": Major has been changed";
             }
         }
         public string StartDate
         {
-            get {return p_StartDate; }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_StartDate;
+                }
+                else return "Private";
+            }
             set
             {
                 p_StartDate = value;
+                test += "\n" + Name + ":start date has been changed";
             }
         }
         public string GradDate
         {
-            get { return p_GradDate;  }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_GradDate;
+                }
+                else return "Private";
+            }
             set
             {
                 p_GradDate = value;
+                test += "\n" + Name + ": Grad Date has been changed";
             }
         }
         public string State
         {
-            get { return p_State; }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_State;
+                }
+                else return "Private";
+            }
             set
             {
                 p_State = value;
+                test += "\n" + Name + ": State Address has been changed";
             }
         }
         public string Country
         {
-            get { return p_Country; }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_Country;
+                }
+                else return "Private";
+            }
             set
             {
                 p_Country = value;
+                test += "\n" + Name + ": Country has been changed";
             }
         }
         public string EmailAddress
         {
-            get { return p_EmailAddress; }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_EmailAddress;
+                }
+                else return "Private";
+            }
             set
             {
                 p_EmailAddress = value;
+                test += "\n" + Name + ": Email Address has been changed";
             }
         }
         public string PhoneNumber
         {
-            get { return p_PhoneNumber; }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_PhoneNumber;
+                }
+                else return "Private";
+            }
             set
             {
                 p_PhoneNumber = value;
+                test += "\n" + Name + ": Phone Number has been changed";
             }
         }
         public string MailingAddress
         {
-            get { return p_MailingAddress; }
+            get
+            {
+                if (PrivacyChoice == false)
+                {
+                    return this.p_MailingAddress;
+                }
+                else return "Private";
+            }
             set
             {
                 p_MailingAddress = value;
+                test += "\n" + Name + ": Mailing Address has been changed";
             }
         }
         public bool PrivacyChoice
@@ -129,6 +192,7 @@ namespace StudentClass
             set
             {
                 p_PrivacyChoice = value;
+                test += Name + ": Privacy Choice has been changed";
             }
         }
         //Private
@@ -143,6 +207,7 @@ namespace StudentClass
         private string p_PhoneNumber;
         private string p_MailingAddress;
         private bool p_PrivacyChoice;
+        //Log List Declaration
 
         //Functions 
         public void printStudentInfo()
@@ -152,6 +217,7 @@ namespace StudentClass
                 Console.WriteLine("StudentID: " + StudentID);
                 Console.WriteLine("Name: " + Name);
                 Console.WriteLine("User has chosen to not have other information publicly available for them. ");
+                Console.WriteLine("");
             } else
             {
                 Console.WriteLine("StudentID: " + StudentID);
@@ -164,7 +230,12 @@ namespace StudentClass
                 Console.WriteLine("State: " + State);
                 Console.WriteLine("Country: " + Country);
                 Console.WriteLine("Mailing Address: " + MailingAddress);
+                Console.WriteLine("");
             }
+        }
+        public void printLog()
+        {
+            Console.WriteLine(test);
         }
 
     }
