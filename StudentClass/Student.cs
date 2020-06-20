@@ -70,6 +70,10 @@ namespace StudentClass
             }
             set
             {
+                if (value == "Computer Science")
+                {
+                    value = value + " (Nerd)";
+                }
                 this.p_Major = value;
                 test += "\n" + Name + ": Major has been changed";
             }
