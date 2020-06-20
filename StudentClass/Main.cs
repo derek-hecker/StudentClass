@@ -13,6 +13,7 @@ namespace StudentClass
        static void Main(string[] args)
         {
             Student Stud1 = new Student("Derek Hecker", 123456789);
+            Stud1.State = "PA";
             Stud1.Major = "Cyber Operations";
             Stud1.printStudentInfo();
             Stud1.PrivacyChoice = true;

@@ -11,6 +11,7 @@ namespace StudentClass
     class Student
     {
         //Constructors x2
+        //Constructor with two required fields. 
         public Student(string Name, double studentID)
         {
             p_Name = Name; //getter setter done
@@ -26,19 +27,20 @@ namespace StudentClass
             p_PrivacyChoice = false;
             //log.Add(new Logs() { changes = "User has been created with name: " + p_Name });
         }
-        public Student(double studentID)
+        //Fully Parameterized Constructor
+        public Student(double studentID, string Name, string Major, string email, string country, string state, string start, string grad, string phone, string mailing, bool choice)
         {
-            p_Name = "";
+            p_Name = Name;
             p_StudentID = studentID;
-            p_Major = "";
-            p_EmailAddress = "";
-            p_Country = "";
-            p_StartDate = "";
-            p_GradDate = "";
-            p_State = "";
-            p_PhoneNumber = "";
-            p_MailingAddress = "";
-            p_PrivacyChoice = false;
+            p_Major = Major;
+            p_EmailAddress = email;
+            p_Country = country;
+            p_StartDate = start;
+            p_GradDate = grad;
+            p_State = state;
+            p_PhoneNumber = phone;
+            p_MailingAddress = mailing;
+            p_PrivacyChoice = choice;
             //log.Add(new Logs() { changes = "User has been created with StudentID: " + p_StudentID });
         }
 
@@ -48,7 +50,7 @@ namespace StudentClass
             get { return p_Name; }
             set
             {
-                p_Name = Name;
+                p_Name = value;
                 //log changes
                // log.Add(new Logs() {changes="Name has been changed for user to Name " + p_Name});
             }
@@ -59,10 +61,10 @@ namespace StudentClass
         }
         public string Major
         {
-            get { return p_Major; }
+            get { return this.p_Major; }
             set
             {
-                p_Major = Major;
+                this.p_Major = value;
             }
         }
         public string StartDate
@@ -70,7 +72,7 @@ namespace StudentClass
             get {return p_StartDate; }
             set
             {
-                p_StartDate = StartDate;
+                p_StartDate = value;
             }
         }
         public string GradDate
@@ -78,7 +80,7 @@ namespace StudentClass
             get { return p_GradDate;  }
             set
             {
-                p_GradDate = GradDate;
+                p_GradDate = value;
             }
         }
         public string State
@@ -86,7 +88,7 @@ namespace StudentClass
             get { return p_State; }
             set
             {
-                p_State = State;
+                p_State = value;
             }
         }
         public string Country
@@ -94,7 +96,7 @@ namespace StudentClass
             get { return p_Country; }
             set
             {
-                p_Country = Country;
+                p_Country = value;
             }
         }
         public string EmailAddress
@@ -102,7 +104,7 @@ namespace StudentClass
             get { return p_EmailAddress; }
             set
             {
-                p_EmailAddress = EmailAddress;
+                p_EmailAddress = value;
             }
         }
         public string PhoneNumber
@@ -110,7 +112,7 @@ namespace StudentClass
             get { return p_PhoneNumber; }
             set
             {
-                p_PhoneNumber = PhoneNumber;
+                p_PhoneNumber = value;
             }
         }
         public string MailingAddress
@@ -118,7 +120,7 @@ namespace StudentClass
             get { return p_MailingAddress; }
             set
             {
-                p_MailingAddress = MailingAddress;
+                p_MailingAddress = value;
             }
         }
         public bool PrivacyChoice
@@ -126,7 +128,7 @@ namespace StudentClass
             get { return p_PrivacyChoice; }
             set
             {
-                p_PrivacyChoice = PrivacyChoice;
+                p_PrivacyChoice = value;
             }
         }
         //Private
